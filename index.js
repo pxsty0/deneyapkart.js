@@ -29,6 +29,8 @@ class DeneyapKart {
   pinMode = (pin, type) => require("./src/board/pinMode")(pin, type, this);
   digitalWrite = (pin, state) =>
     require("./src/board/digitalWrite")(pin, state, this);
+  analogWrite = (pin, value) =>
+    require("./src/board/analogWrite")(pin, value, this);
 }
 
 module.exports = DeneyapKart;
