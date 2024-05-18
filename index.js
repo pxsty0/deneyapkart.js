@@ -25,6 +25,8 @@ class DeneyapKart {
   close = () => require("./src/serial/close")(this);
 
   on = (type, callback) => dataEmitter.on(type, callback);
+
+  pinMode = (pin, type) => require("./src/board/pinMode")(pin, type, this);
 }
 
 module.exports = DeneyapKart;
