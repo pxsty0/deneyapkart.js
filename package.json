@@ -1,0 +1,33 @@
+{
+  "name": "deneyapkart.js",
+  "version": "0.0.1",
+  "description": "A serial communication-based library that allows Deneyap Kart to be managed via computer ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pxsty0/deneyapkart.js.git"
+  },
+  "keywords": [
+    "serial",
+    "deneyapkart",
+    "deneyap",
+    "kart",
+    "t3",
+    "vakfı",
+    "arduino",
+    "pxsty"
+  ],
+  "author": "mustafa 'pxsty' kok",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pxsty0/deneyapkart.js/issues"
+  },
+  "homepage": "https://github.com/pxsty0/deneyapkart.js#readme",
+  "dependencies": {
+    "serialport": "^10.5.0",
+    "@serialport/parser-readline": "^12.0.0"
+  }
+}
