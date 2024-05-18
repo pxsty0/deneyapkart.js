@@ -15,10 +15,14 @@ class DeneyapKart {
     });
 
     this.parser = this.serial.pipe(new ReadlineParser({ delimiter: "\r\n" }));
+
+    this.parser.on("data", (data) =>
+      require("./src/parser/data")(data, dataEmitter)
+    );
   }
 
-  open = () => require("./src/open")(this);
-  close = () => require("./src/close")(this);
+  open = () => require("./src/serial/open")(this);
+  close = () => require("./src/serial/close")(this);
 
   on = (type, callback) => dataEmitter.on(type, callback);
 }
