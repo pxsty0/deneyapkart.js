@@ -1,11 +1,15 @@
 import { SerialPort } from "serialport";
 import EventEmitter from "node:events";
 import { ReadlineParser } from "serialport";
-import pinMode from "./src/board/pinMode";
-import digitalWrite from "./src/board/digitalWrite";
+
+import dataEmitter from "./src/events/data";
+
 import open from "./src/utils/open";
 import close from "./src/utils/close";
-import dataEmitter from "./src/events/data";
+
+import pinMode from "./src/board/pinMode";
+import digitalWrite from "./src/board/digitalWrite";
+import analogWrite from "./src/board/analogWrite";
 
 const dkEmitter = new EventEmitter();
 
@@ -35,6 +39,8 @@ class DeneyapKart {
   pinMode = (pin: string, type: number) => pinMode(pin, type, this.serial);
   digitalWrite = (pin: string, state: number) =>
     digitalWrite(pin, state, this.serial);
+  analogWrite = (pin: string, value: number) =>
+    analogWrite(pin, value, this.serial);
 }
 
 export default DeneyapKart;
