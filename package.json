@@ -1,6 +1,6 @@
 {
-  "name": "deneyapkart.js",
-  "version": "0.0.5",
+  "name": "deneyapkart",
+  "version": "0.0.1",
   "description": "A serial communication-based library that allows Deneyap Kart to be managed via computer ",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
