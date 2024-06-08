@@ -12,11 +12,15 @@ The library is still in the development process. You can send your requests and 
   
 ## Usage and Example
 
-```javascript
-const dk = require("./index");
+### JavaScript
 
-const dkMini = new dk({
-  port: "COM8",
+```javascript
+const DeneyapKart = require("deneyapkart").default;
+
+const dkMini = new DeneyapKart("COM8");
+
+dkMini.on("ready", () => {
+  console.log("Deneyap Kart'a Baglanildi");
 });
 
 dkMini.on("data", (data) => {
@@ -26,7 +30,33 @@ dkMini.on("data", (data) => {
   `);
 });
 
-dkMini.pinMode("D14", "OUTPUT");
+dkMini.pinMode("D14", 1);
+dkMini.digitalWrite("D14", 1);
+dkMini.analogWrite("D14", 200);
+
+dkMini.open();
+
+```
+
+### TypeScript
+
+```typescript
+import DeneyapKart, { dkDataType } from "typescript";
+
+const dkMini = new DeneyapKart("COM8");
+
+dkMini.on("ready", () => {
+  console.log("Deneyap Kart'a Baglanildi");
+});
+
+dkMini.on("data", (data: dkDataType) => {
+  console.log(`
+  key : ${data.key}
+  value : ${data.value}
+  `);
+});
+
+dkMini.pinMode("D14", 1);
 dkMini.digitalWrite("D14", 1);
 dkMini.analogWrite("D14", 200);
 
