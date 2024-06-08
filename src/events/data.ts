@@ -1,4 +1,7 @@
-module.exports = (data, dataEmitter) => {
+import type EventEmitter from "node:events";
+import { dkDataType } from "../../index";
+
+const dataEmitter = (data: string, dkEmitter: EventEmitter) => {
   const msg = data.toString();
 
   if (!msg.startsWith("DK+")) return;
@@ -9,8 +12,10 @@ module.exports = (data, dataEmitter) => {
   const key = arrMsg[0].slice(1, -1);
   const value = arrMsg[1];
 
-  dataEmitter.emit("data", {
+  dkEmitter.emit("data", {
     key,
     value,
-  });
+  } as dkDataType);
 };
+
+export default dataEmitter;
